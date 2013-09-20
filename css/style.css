@@ -75,6 +75,9 @@ div.cont A:hover {
 div.cont P {
  padding:0px 10%;
 }
+div.cont IMG {
+ border:0px;
+}
 h3 {
  opacity:0.9;
  padding:3px 276px 3px 13px;
