@@ -1,0 +1,9 @@
+{
+  "deploy": {
+    "type": "S3",
+    "target": {
+      "master": "www.kylemunz.com",
+      "dev": "dev.kylemunz.com"
+    }
+  }
+}
