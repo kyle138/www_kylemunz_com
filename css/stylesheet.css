@@ -1,0 +1,28 @@
+header {
+  background-color: #1380a1;
+}
+header h1 {
+  font-size: 63px;
+}
+header a, a:hover {
+  font-weight: bold;
+  color: #c9ccd3;
+  text-decoration: none;
+}
+p.site-description {
+  font-size: 20px;
+}
+#Sites {
+  margin-top: 50px;
+}
+#Sites div div {
+  padding:0px 100px;
+}
+#Sites div div img {
+  padding-bottom: 43px;
+}
+footer .glyphicon {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1380a1;
+}
