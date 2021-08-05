@@ -1,44 +1,56 @@
-<HTML>
-<HEAD>
- <title>www.KyleMunz.com</title>
- <link rel="shortcut icon" href="images/favicon.ico" />
- <!DOCTYPE html>
- <link rel="stylesheet" type="text/css" href="css/style.css" />
- <meta charset="UTF-8">
-</HEAD>
-<BODY>
-<div id='wrapper' class='wrapper'>
- <div id='header'>
-  <a href='/'>www.KyleMunz.com</a>
- </div>
- <div id='container' class='container'>
-  <div id='cont' class='cont' style='text-align:justify;text-justify:inter-word;'>
-   <ul class='contUL' id='contUL'>
-    <li>
-     <h1><a href="http://nighthawk.kylemunz.com/">Project Nighthawk</a></h1>
-     <a href="http://nighthawk.kylemunz.com/"><img alt="Project Nighthawk" src="images/ProjectNighthawk400S.png"></a>
-     <p>I have a 1984 Honda Nighthawk 700S which at <span id="age"></span> years old requires frequent maintenance. I chronicle that maintenance here, mostly for my own memory but also for other Nighthawk owners.
-     </p>
-    </li>
-    <li>
-     <h1><a href="http://resume.kylemunz.com/">My Resume Site</a></h1>
-     <a href="http://resume.kylemunz.com/"><img alt="My Resume Site" src="images/Resume400S.png"></a>
-     <p>My online resume, which lists all of my skills, knowledge, and experiences. Most resumes do this, however this site was <em>built</em> using all of my skills, knowledge, and experiences. From the installation of the OS and the configuration of the Apache, Varnish, and MySQL to the hand-written HTML, CSS, PHP, MySQL, Javascript/JQuery, and Ajax, this is my online demonstration of what I am capable of.
-     </p>
-    </li>
-   </ul>
-  </div>
- </div>
-</div>
-</BODY>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="jquery/toWords.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  var date = new Date();
-  var year = date.getFullYear();
-  var age = year-1984;
-  $('#age').html(toWords(age));
-});
-</script>
-</HTML>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>www.KyleMunz.com</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kyle Munz">
+    <meta name="description" content="Kyle Munz">
+    <meta name="keywords" content="Kyle, Munz">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=font1|font2|etc" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container-fluid text-center">
+      <h1><a href="/" title="KyleMunz">www.KyleMunz.com</a></h1>
+    </header>
+    <!-- End Header -->
+
+    <!-- Sites -->
+    <div id="Sites" class="container-fluid">
+      <div class="row">
+        <a href="https://nighthawk.kylemunz.com/">
+          <div class="col-sm-6 text-center">
+            <h1>Project Nighthawk</h1>
+            <img src="images/ProjectNighthawk400S.png" alt="Project Nigthawk Webthumb">
+            <p class="site-description">I have a 1984 Honda Nighthawk 700S which at thirty-seven years old requires frequent maintenance. I chronicle that maintenance here, mostly for my own memory but also for other Nighthawk owners.</p>
+          </div>
+        </a>
+        <a href="http://resume.kylemunz.com/">
+          <div class="col-sm-6 text-center">
+            <h1>My Resume Site</h1>
+            <img src="images/Resume400S.png" alt="My Resume Site Webtumb">
+            <p class="site-description">My online resume, which lists all of my skills, knowledge, and experiences. Most resumes do this, however this site was built using all of my skills, knowledge, and experiences. From the design of the site and the handwritten code to the configuration of the hosting solution. This is my online demonstration of what I am capable of. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- End Sites -->
+
+    <!-- Footer -->
+    <footer class="container-fluid text-center">
+      <a href="#" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <a href="https://www.KyleMunz.com">
+        <p>www.KyleMunz.com</p>
+      </a>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
