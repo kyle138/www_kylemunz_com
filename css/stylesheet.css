@@ -4,10 +4,11 @@ header {
 header h1 {
   font-size: 63px;
 }
-header a, a:hover {
+header a, header a:hover {
   font-weight: bold;
   color: #c9ccd3;
   text-decoration: none;
+  text-shadow: 2px 2px 3px #434343;
 }
 p.site-description {
   font-size: 20px;
@@ -20,6 +21,12 @@ p.site-description {
 }
 #Sites div div img {
   padding-bottom: 43px;
+}
+#Sites a {
+  color: #434343;
+}
+#Sites h1:hover {
+  text-shadow: 2px 2px 3px #131313;
 }
 footer .glyphicon {
   font-size: 20px;
