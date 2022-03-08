@@ -1,0 +1,21 @@
+body {
+  font: 400 15px Lato, sans-serif;
+  line-height: 1.8;
+  color: #005bbb;
+  background-color: #ffd500;
+}
+.jumbotron {
+  font-family: Montserrat, sans-serif;
+  color: #ffd500;
+  background-color: #005bbb;
+  padding: 100px 25px;
+}
+.jumbotron h1 {
+  font-size: 91px;
+}
+.container-fluid {
+  padding: 50px 50px;
+}
+.logo {
+  font-size: 200px;
+}
