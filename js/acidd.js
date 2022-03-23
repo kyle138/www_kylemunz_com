@@ -13,21 +13,52 @@ function getElems(prefix) {
   // Identify all elements with 'acidd' class and the supplied prefix* class.
   let ELEMs = document.querySelectorAll(`.acidd[class*='${prefix}']`);
   // Get array of unique prefix* classes being used.
-  let arr = [],
+  let obj = {},
       reggie = new RegExp(`^${prefix}\\d+$`);
   for(var i=0;i<ELEMs.length;i++) {
     ELEMs[i].classList.forEach((cls) => {
-      if(reggie.test(cls) && arr.indexOf(cls) === -1) {
-        arr.push(cls);
+      if(reggie.test(cls) && !obj.hasOwnProperty(cls)) {
+        obj[cls] = [1,1,1];
       }
     }); // End elems.forEach
   } // End elems for loop
-  return arr;
+  return obj;
 } // End getElems
 
-function getRGBs(cls) {
+/*
+* Gets the backgroundColor for the first element of the selected class.
+* If the backgroundColor isn't set, check the parent elements all the way up.
+* If no backgroundColor is set all the way up to HTML element, set to 255,255,255.
+* @cls {string} class to get background color for. eg: bgc-0 bgc-1 bgc-2 etc
+*/
+function getbgcRGB(cls) {
+  console.log('getbgcRGB',cls);
+    let rgb =  window.getComputedStyle(document.querySelector(`.${cls}`),null).backgroundColor;
+    if(rgb == 'rgba(0, 0, 0, 0)') {
+      // Ugh, it's not set, so check its parents.
+      let elem = document.querySelector(`.${cls}`);
 
-}
+      do {
+        elem=elem.parentElement;
+        if(elem.nodeName == 'HTML') {
+          // We made it all the way to the HTML element with no background color set. Just return white.
+          rgb = 'rgb(255, 255, 255)';
+        } else {
+          rgb = window.getComputedStyle(elem).backgroundColor;
+        }
+      } while (rgb == 'rgba(0, 0, 0, 0)')
+
+      return rgb.split('(')[1].split(')')[0].split(', ').map(Number);
+    } else {  // The selected element has a color set, convert RGB values to array of numbers and return it.
+      return rgb.split('(')[1].split(')')[0].split(', ').map(Number);
+    }
+} // End getbgcRGB
+
+function getclrRGB(cls) {
+  console.log('getclrRGB',cls); // DEBUG:
+  return window.getComputedStyle(document.querySelector(`.${cls}`),null).color.split('(')[1].split(')')[0].split(', ').map(Number);
+
+} // End getclrRGB
 
 // Main Function
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,10 +74,32 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(elements['clr']); // DEBUG:
 
     // Only continue if we have any bgc-* or clr-* classes
-    if(elements['bgc'].length+elements['clr'].length > 0) {
+    if(Object.keys(elements['bgc']).length+Object.keys(elements['clr']).length > 0) {
       console.log('acidd!');  // DEBUG:
-      // Assign initial BGC and CLR values
-      console.log(window.getComputedStyle(document.querySelector(`.${elements['bgc'][0]}`),null).backgroundColor);  //************ substr and split 
+
+      // Retrieve initial BGC values
+      Promise.all(
+        Object.keys(elements['bgc']).map((elem) => {
+          elements['bgc'][elem]=getbgcRGB(elem);
+          console.log(elem);  // DEBUG:
+          console.log(elements['bgc'][elem]); // DEBUG:
+        })  // End map
+      ) // End Promise.all
+      .then(() => {
+        console.log('then');  // DEBUG:
+        console.log(elements['bgc']); // DEBUG:
+        Promise.all(
+          Object.keys(elements['clr']).map((elem) => {
+            elements['clr'][elem]=getclrRGB(elem);
+            console.log(elem);  // DEBUG:
+            console.log(elements['clr'][elem]); // DEBUG:
+          })  // End map
+        ) // End Promise.all
+        .then(() => {
+          console.log('then,then'); // DEBUG:
+          console.log(elements['clr']); // DEBUG:
+        })  // End Promise.all.then within the Promise.all.then
+      })  // End Promise.all.then
       // *************  Call a promise function here ***************
 
     } // End if bgc + clr
