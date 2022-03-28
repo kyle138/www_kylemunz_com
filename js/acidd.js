@@ -32,7 +32,6 @@ function getElems(prefix) {
 * @cls {string} class to get background color for. eg: bgc-0 bgc-1 bgc-2 etc
 */
 function getbgcRGB(cls) {
-  console.log('getbgcRGB',cls);
     let rgb =  window.getComputedStyle(document.querySelector(`.${cls}`),null).backgroundColor;
     if(rgb == 'rgba(0, 0, 0, 0)') {
       // Ugh, it's not set, so check its parents.
@@ -54,12 +53,15 @@ function getbgcRGB(cls) {
     }
 } // End getbgcRGB
 
+/*
+* Gets the color for the first element of the selected class.
+* @cls {string} class to get background color for. eg: bgc-0 bgc-1 bgc-2 etc
+*/
 function getclrRGB(cls) {
-  console.log('getclrRGB',cls); // DEBUG:
   return window.getComputedStyle(document.querySelector(`.${cls}`),null).color.split('(')[1].split(')')[0].split(', ').map(Number);
-
 } // End getclrRGB
 
+//**************
 // Main Function
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -77,28 +79,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if(Object.keys(elements['bgc']).length+Object.keys(elements['clr']).length > 0) {
       console.log('acidd!');  // DEBUG:
 
-      // Retrieve initial BGC values
-      Promise.all(
-        Object.keys(elements['bgc']).map((elem) => {
+      // Retrieve initial BGC and CLR values
+      Promise.all(  // I make no promises that this is correct.
+        [Object.keys(elements['bgc']).map((elem) => {
           elements['bgc'][elem]=getbgcRGB(elem);
           console.log(elem);  // DEBUG:
           console.log(elements['bgc'][elem]); // DEBUG:
-        })  // End map
+        }),  // End map
+        Object.keys(elements['clr']).map((elem) => {
+          elements['clr'][elem]=getclrRGB(elem);
+          console.log(elem);  // DEBUG:
+          console.log(elements['clr'][elem]); // DEBUG:
+        })]  // End map
       ) // End Promise.all
       .then(() => {
         console.log('then');  // DEBUG:
-        console.log(elements['bgc']); // DEBUG:
-        Promise.all(
-          Object.keys(elements['clr']).map((elem) => {
-            elements['clr'][elem]=getclrRGB(elem);
-            console.log(elem);  // DEBUG:
-            console.log(elements['clr'][elem]); // DEBUG:
-          })  // End map
-        ) // End Promise.all
-        .then(() => {
-          console.log('then,then'); // DEBUG:
-          console.log(elements['clr']); // DEBUG:
-        })  // End Promise.all.then within the Promise.all.then
+        console.log(elements); // DEBUG:
       })  // End Promise.all.then
       // *************  Call a promise function here ***************
 
