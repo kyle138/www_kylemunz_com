@@ -2,7 +2,8 @@
 
 // Initial variables
 var dBGC,
-    dCLR; // Directional arrays for BGC and CLR
+    dCLR, // Directional arrays for BGC and CLR
+    elements = [];
 
 /*
 * Identifies all elements containing both 'acidd' and the supplied prefix classes.
@@ -32,6 +33,7 @@ function getElems(prefix) {
 * @cls {string} class to get background color for. eg: bgc-0 bgc-1 bgc-2 etc
 */
 function getbgcRGB(cls) {
+  return new Promise((res) => {
     let rgb =  window.getComputedStyle(document.querySelector(`.${cls}`),null).backgroundColor;
     if(rgb == 'rgba(0, 0, 0, 0)') {
       // Ugh, it's not set, so check its parents.
@@ -46,11 +48,11 @@ function getbgcRGB(cls) {
           rgb = window.getComputedStyle(elem).backgroundColor;
         }
       } while (rgb == 'rgba(0, 0, 0, 0)')
-
-      return rgb.split('(')[1].split(')')[0].split(', ').map(Number);
-    } else {  // The selected element has a color set, convert RGB values to array of numbers and return it.
-      return rgb.split('(')[1].split(')')[0].split(', ').map(Number);
     }
+    // The selected element has a color set, convert RGB values to array of numbers and return it.
+    elements['bgc'][cls] = rgb.split('(')[1].split(')')[0].split(', ').map(Number);
+    return res();
+  }); // End Promise
 } // End getbgcRGB
 
 /*
@@ -58,7 +60,10 @@ function getbgcRGB(cls) {
 * @cls {string} class to get background color for. eg: bgc-0 bgc-1 bgc-2 etc
 */
 function getclrRGB(cls) {
-  return window.getComputedStyle(document.querySelector(`.${cls}`),null).color.split('(')[1].split(')')[0].split(', ').map(Number);
+  return new Promise((res) => {
+    elements['clr'][cls] = window.getComputedStyle(document.querySelector(`.${cls}`),null).color.split('(')[1].split(')')[0].split(', ').map(Number);
+    return res();
+  });
 } // End getclrRGB
 
 //**************
@@ -68,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Only execute if any elements have 'acidd' class.
   if(document.getElementsByClassName('acidd').length > 0) {
 
-    var elements=[];
     // Identify all elements with 'acidd' class and bgc-* or clr-* class.
     elements['bgc'] = getElems('bgc-');
     console.log(elements['bgc']);  // DEBUG:
@@ -82,12 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // Retrieve initial BGC and CLR values
       Promise.all(  // I make no promises that this is correct.
         [Object.keys(elements['bgc']).map((elem) => {
-          elements['bgc'][elem]=getbgcRGB(elem);
+          getbgcRGB(elem);
           console.log(elem);  // DEBUG:
           console.log(elements['bgc'][elem]); // DEBUG:
         }),  // End map
         Object.keys(elements['clr']).map((elem) => {
-          elements['clr'][elem]=getclrRGB(elem);
+          getclrRGB(elem);
           console.log(elem);  // DEBUG:
           console.log(elements['clr'][elem]); // DEBUG:
         })]  // End map
