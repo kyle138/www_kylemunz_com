@@ -1,0 +1,44 @@
+.navbar {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  /* background-color: #1380a1; */
+  background-color: #c9ccd3;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+.navbar li a, .navbar .navbar-brand {
+  color: #fefefe !important;
+}
+.navbar-brand {
+  padding: 0px 15px;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #1380a1 !important;
+  background-color: #fefefe !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fefefe !important;
+}
+.jumbotron {
+  background-color: #1380a1;
+  color: #c9ccd3;
+}
+.jumbotron h1 {
+  text-shadow: 2px 2px 3px #434343;
+}
+.glyph {
+  color: #c7c7c7;
+  font-size: 200px;
+  line-height: 200px;
+}
+.section h2 {
+  color: #1380a1;
+}
