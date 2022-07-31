@@ -1,11 +1,11 @@
-header {
+#header {
   background-color: #1380a1;
   padding-bottom: 5%;
 }
-header h1 {
+#header h1 {
   font-size: 63px;
 }
-header a, header a:hover {
+#header a, header a:hover {
   font-weight: bold;
   color: #c9ccd3;
   text-decoration: none;

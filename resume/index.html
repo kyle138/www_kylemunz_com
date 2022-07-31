@@ -28,8 +28,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"> <a class="nav-link px-3" href="#objective">OBJECTIVE</a> </li>
+            <li class="nav-item"> <a class="nav-link px-3" href="#skills">CERTS & SKILLS</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#employment">EMPLOYMENT HISTORY</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#skills">SKILLS & CERTS</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#contributions">COMMUNITY CONTRIBUTIONS</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#fun">JUST FOR FUN</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#contact">CONTACT</a> </li>
@@ -46,7 +46,7 @@
     <!-- End jumbotron -->
 
     <!-- Objective -->
-    <div id="objective" class="container-fluid section">
+    <div id="objective" class="container-fluid p-5 section">
       <h2>Objective</h2>
       <div class="row">
         <div class="col-sm-4">
@@ -60,8 +60,177 @@
     </div>
     <!-- End Objective -->
 
+    <!-- Skills -->
+    <div id="skills" class="container-fluid bg-grey p-5 section">
+      <h2>Certifications and Skills</h2>
+      <div class="row">
+        <div class="col-sm-8 accordion" id="skillAccordion">
+          <!-- Certifications -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill1">
+              <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                Certifications
+              </button>
+            </h3>
+            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="skill1" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <ul>
+                  <li>CEH <strong>EC-Council: Certified Ethical Hacker</strong></li>
+                  <li>AWS <strong>Certified Solutions Architect - Associate</strong> (AWS-ASA-18516)</li>
+                  <li>AWS <strong>Certified Developer - Associate</strong> (AWS-DEV-4264)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Certifications -->
+          <!-- Cloud and Virtualization -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill2">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                Cloud and Virtualization
+              </button>
+            </h3>
+            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="skill2" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>I have extensive experience with <strong>AWS</strong> (<strong>A</strong>mazon <strong>W</strong>eb <strong>S</strong>ervices) as well as the following virtualization services:</i>
+                <ul>
+                  <li>AWS (I hold CSA and Dev certificates)</li>
+                  <li>VMWare/ESXi</li>
+                  <li>VirtualBox</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Cloud and Virtualization -->
+          <!-- Programming -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill3">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                Programming
+              </button>
+            </h3>
+            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="skill3" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>I first learned to program on my Commodore64 by reading the User Manual and have never stopped learning. Though these days I probably learn more from StackOverflow.</i><br><br>
+                <span class="lead">I have experience in the following languages ranked by how comfortable I feel using them:</span>
+                <ul>
+                  <li>Javascript/Node.js</li>
+                  <li>BASH</li>
+                  <li>PHP/MySQL</li>
+                  <li>Basic (Visual,Q,GW,CBM)</li>
+                  <li>Perl</li>
+                  <li>C/C++</li>
+                  <li>Java</li>
+                </ul>
+
+                <span class="lead">I also have experience with the following frameworks, workflows, and SaaS:</span>
+                <ul>
+                  <li>AWS Lambda</li>
+                  <li>Serverless.js</li>
+                  <li>Git/Github (<a href="#github">I have several repositories shared under various opensource licenses</a>)</li>
+                  <li>NPM (<a href="#NPM">I have written my own packages</a>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Programming -->
+          <!-- Networking -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill4">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                Networking
+              </button>
+            </h3>
+            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="skill4" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>My experience in networking is from Layer 1 on up. From terminating Cat6 cables to designing VLANs and coordinating class migrations.</i>
+                <ul>
+                  <li>Cisco/Fortinet/IPCop firewalls.</li>
+                  <li>OpenVPN and MS RRAS VPNs.</li>
+                  <li>HP/Aruba/Cisco/Hirschmann/Netgear managed switches.</li>
+                  <li>Cisco/Aruba WAP VLAN and VAP configuration.</li>
+                  <li>AWS VPCs and subnet groups.</li>
+                  <li>Nagios/NTOP/MRTG networking and monitoring. (<a href="Nagios">I have written my own Nagios Plugins</a>)</li>
+                  <li>RNRP (<strong>R</strong>edundant <strong>N</strong>etwork <strong>R</strong>outing <strong>P</strong>rotocol - Proprietary to ABB Inc.)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Networking -->
+          <!-- Operating Systems -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill5">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                Operating Systems
+              </button>
+            </h3>
+            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="skill5" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>I prefer linux these days but have a Windows background and work well in a mixed environment. My first computer was a second-hand Commodore64 though I have to admit being a little rusty on that system.</i><br><br>
+                <span class="lead">I have experience with installation, configuration, and maintenance of the following operating systems:</span>
+                <ul>
+                  <li><strong>linux/unix</strong> - Debian and RHEL based, server and desktop, my primary desktop is Mint+Cinnamon.</li>
+                  <li><strong>Microsoft</strong> - From DOS 5 to Server 2019, home to server editions, and experience with MS VLSC</li>
+                  <li><strong>Apple</strong> - Most of the OS X cats and landmarks and some experience with macOS Server and MDM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Operating Systems -->
+          <!-- Hardware -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill6">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                Hardware
+              </button>
+            </h3>
+            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="skill6" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>My experience with PC hardware begins with hacking my Commodore64 in the 80s, working on the front lines in a PC repair shop in the 90s, to being responsible for data centers and corporate workstations.</i><br><br>
+                <span class="lead">Some of my experiences include:</span>
+                <ul>
+                  <li>Data Recovery and Forensics</li>
+                  <li>Thermal and power considerations</li>
+                  <li>ISA/PCI/AGP/PCI-e expansions</li>
+                  <li>RAID/iSCSI</li>
+                  <li>installation, configuration, and troubleshooting of server and desktop components</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Hardware -->
+          <!-- Miscellaneous -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="skill7">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                Miscellaneous
+              </button>
+            </h3>
+            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="skill7" data-bs-parent="#skillAccordion">
+              <div class="accordion-body">
+                <i>Not necessarily technology based skills, but worth mentioning:</i>
+                <ul>
+                  <li>Typing (90WPM)</li>
+                  <li>Spanish</li>
+                  <li>GIMP</li>
+                  <li>Cycling</li>
+                  <li>Automobile repair (This was asked in an interview once, yes I have replaced my own brakes and trust my work with my life.)</li>
+                  <li>Red Cross Lifeguard trained (This was a PE Credit in college)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- End Hardware -->
+        </div>
+        <div class="col-sm-4 text-end">
+          <i class="glyph bi bi-card-checklist"></i>
+        </div>
+      </div>
+    </div>
+    <!-- End Objective -->
+
     <!-- Employment -->
-    <div class="employment" class="container-fluid section">
+    <div id="employment" class="container-fluid p-5 section">
       <h2>Employment History</h2>
       <div class="row">
         <div class="col-sm-8">
@@ -71,7 +240,7 @@
             <li>some more stuff</li>
           </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-end">
           <h4>07-21-2010 to Present</h4>
         </div>
       </div>
@@ -83,7 +252,7 @@
             <li>some more stuff</li>
           </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-end">
           <h4>10-07-2014 to 10-07-2017</h4>
         </div>
       </div>
@@ -95,7 +264,7 @@
             <li>some more stuff</li>
           </ul>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 text-end">
           <h4>01-05-2009 to 07-20-2010</h4>
         </div>
       </div>
