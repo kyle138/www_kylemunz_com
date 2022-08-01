@@ -29,8 +29,8 @@
           <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"> <a class="nav-link px-3" href="#objective">OBJECTIVE</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#skills">CERTS & SKILLS</a> </li>
+            <li class="nav-item"> <a class="nav-link px-3" href="#contributions">PROJECTS & CONTRIBUTIONS</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#employment">EMPLOYMENT HISTORY</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#contributions">COMMUNITY CONTRIBUTIONS</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#fun">JUST FOR FUN</a> </li>
             <li class="nav-item"> <a class="nav-link px-3" href="#contact">CONTACT</a> </li>
           </ul>
@@ -50,7 +50,7 @@
       <h2>Objective</h2>
       <div class="row">
         <div class="col-sm-4">
-          <i class="glyph bi-bullseye"></i>
+          <i class="glyph bi bi-bullseye"></i>
         </div>
         <div class="col-sm-8">
           <p class="lead">"I am always looking for a challenge. One where I can use the skills and knowledge that I already have and yet still grow and learn."</p>
@@ -61,7 +61,7 @@
     <!-- End Objective -->
 
     <!-- Skills -->
-    <div id="skills" class="container-fluid bg-grey p-5 section">
+    <div id="skills" class="container-fluid bg-teal p-5 section">
       <h2>Certifications and Skills</h2>
       <div class="row">
         <div class="col-sm-8 accordion" id="skillAccordion">
@@ -127,8 +127,8 @@
                 <ul>
                   <li>AWS Lambda</li>
                   <li>Serverless.js</li>
-                  <li>Git/Github (<a href="#github">I have several repositories shared under various opensource licenses</a>)</li>
-                  <li>NPM (<a href="#NPM">I have written my own packages</a>)</li>
+                  <li>Git/Github (<a href="#github">View my repositories on Github</a>)</li>
+                  <li>NPM (<a href="#NPM">View my packages on NPM</a>)</li>
                 </ul>
               </div>
             </div>
@@ -223,14 +223,54 @@
           <!-- End Hardware -->
         </div>
         <div class="col-sm-4 text-end">
-          <i class="glyph bi bi-card-checklist"></i>
+          <i class="glyph glyph-lite bi bi-card-checklist"></i>
+        </div>
+      </div>
+    </div>
+    <!-- End Skills -->
+
+    <!-- Contributions -->
+    <div id="contributions" class="container-fluid p-5 section">
+      <h2>Projects and Community Contributions</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <i class="glyph bi bi-journal-code"></i>
+        </div>
+        <div class="col-sm-8">
+          <p class="lead">I am a proponent of the open source philophy and always try to contribute back to the community.</p>
+          Below are some of my contributions:
+          <ul>
+            <li><strong><a href="https://www.npmjs.com/~kyle138">NPM</a></strong></li>
+              <ul>
+                <li><a href="https://www.npmjs.com/package/check-ssl-expiration">check-ssl-expiration</a> - Checks given domain's SSL/TLS certificate and return time left until expiration.</li>
+                <li><a href="https://www.npmjs.com/package/webnudge">webnudge</a> - Makes simple web requests to keep Pantheon containers active.</li>
+                <li><a href="https://www.npmjs.com/package/create-response-object">create-response-object</a> - A very, very tiny object creator for lambda-proxy responses.</li>
+                <li><a href="https://www.npmjs.com/package/is_letter_a">is_letter_a</a> - I was inspired by the <a href="https://en.wikipedia.org/wiki/Npm_(software)#Notable_breakages">left-pad fiasco</a> to make my own package with limited usability. So is_letter_a tests if the supplied argument is the letter A. Completely useless and far and away my most popular package.</li>
+                <li><a href="https://www.npmjs.com/package/acidd">acidd</a> - My first attempt at an NPM module for front-end use. Randomly drifts the RGB values of the 'color' and 'backgroundColor' properties for HTML elements. See an example <a href="https://acidd.kylemunz.com/">here</a>.</li>
+              </ul>
+            <li><strong><a href="https://github.com/kyle138">GitHub</a></strong></li>
+              <ul>
+                <li><a href="https://github.com/kyle138/githubtos3">GithubToS3</a> - Lambda CI/CD bot that responds to GitHub pushes and deploys to AWS S3.</li>
+                <li><a href="https://github.com/kyle138/SLS-S3Uploader">S3Uploader</a> - Serverless stack allowing anonymous and secure uploads directly to AWS S3. Perfect for replacing FTP for files up to 5TB. See example <a href="https://upload.kylemunz.com/">here</a>.</li>
+                <li><a href="https://github.com/kyle138/cronWhois">CronWhois</a> - A lambda function that runs at a set rate to check whois registration status for a specified list of domains.</li>
+                <li><a href="https://github.com/kyle138/SLS-RedirectsForStaticWordPress">RedirectsForStaticWordPress</a> - Serverless Lambda framework for redirecting dynamic requests to a static WordPress site.</li>
+                <li><a href="https://kyle138.github.io/oauthlambdacognito/">OauthLambdaCognito</a> - How to setup a secure, serverless, single-page webapp using Google OAuth2, Lambda, API Gateway, and Cognito.</li>
+                <li><a href="https://github.com/kyle138/feedbackform">FeedbackForm</a> - Serverless feedback form. See example <a href="https://feedback.kylemunz.com/">here</a>.</li>
+              </ul>
+            <li><strong><a href="https://exchange.nagios.org/directory/Owner/Kyle138/1">Nagios Exchange</a></strong></li>
+              <ul>
+                <li><a href="https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/SAN-and-NAS/Check-TeraStation-Storage/details">Check-TeraStation-Storage</a> - Check remaining storage capacity of Buffalo TeraStations via SNMP</li>
+                <li><a href="https://exchange.nagios.org/directory/Plugins/Hardware/Storage-Systems/SAN-and-NAS/check_qnap_temps/details">Check_qnap_temps</a> - Yet another Nagios plugin for checking CPU, SYS, and HDD temperatures on QNAP devices via SNMP</li>
+              </ul>
+            <li><strong><a href="#justforfun">Userscripts</a></strong> - This site is now defunct but check out some examples in my <a href="#justforfun">Just For Fun</a> section.</li>
+          </ul>
         </div>
       </div>
     </div>
     <!-- End Objective -->
 
     <!-- Employment -->
-    <div id="employment" class="container-fluid p-5 section">
+    <div id="employment" class="container-fluid p-5 bg-teal section">
       <h2>Employment History</h2>
       <div class="row">
         <div class="col-sm-8">

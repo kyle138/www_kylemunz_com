@@ -39,10 +39,17 @@
   font-size: 200px;
   line-height: 200px;
 }
+.glyph-lite {
+  color: #c7c7c7;
+}
 .section h2 {
   color: #333333;
 }
 .bg-grey {
   background-color: #d6d6d6;
+  color: #333333
+}
+.bg-teal {
+  background-color: #1380a1;
   color: #333333
 }
