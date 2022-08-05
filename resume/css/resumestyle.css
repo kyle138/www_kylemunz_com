@@ -1,7 +1,6 @@
 .navbar {
   font-family: Montserrat, sans-serif;
   margin-bottom: 0;
-  /* background-color: #1380a1; */
   background-color: #c9ccd3;
   z-index: 9999;
   border: 0;
@@ -39,6 +38,13 @@
   font-size: 200px;
   line-height: 200px;
 }
+/* Scale down glyphs on smaller screens */
+@media (max-width: 600px) {
+  .glyph {
+    font-size: 5vh;
+    line-height: 5vh;
+  }
+}
 .glyph-lite {
   color: #c7c7c7;
 }
@@ -47,9 +53,21 @@
 }
 .bg-grey {
   background-color: #d6d6d6;
-  color: #333333
+  color: #333333;
 }
 .bg-teal {
   background-color: #1380a1;
-  color: #333333
+  color: #333333;
+}
+.accordion-button:not(.collapsed) {
+  color: #1380a1;
+  background-color: #c7c7c7;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+#contributions a {
+  color: #434343;
+}
+#contributions a:hover {
+  color: black;
+  font-weight: bold;
 }

@@ -27,12 +27,12 @@
         </button>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"> <a class="nav-link px-3" href="#objective">OBJECTIVE</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#skills">CERTS & SKILLS</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#contributions">PROJECTS & CONTRIBUTIONS</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#employment">EMPLOYMENT HISTORY</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#fun">JUST FOR FUN</a> </li>
-            <li class="nav-item"> <a class="nav-link px-3" href="#contact">CONTACT</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#objective">OBJECTIVE</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#skills">PROFICIENCIES</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#contributions">CONTRIBUTIONS</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#employment">EMPLOYMENT</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#fun">JUST FOR FUN</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#contact">CONTACT</a> </li>
           </ul>
         </div>
       </div>
@@ -40,14 +40,31 @@
     <!-- End Navbar -->
 
     <!-- Alas poor Jumbotron, I knew him, et tu BS5? -->
-    <div class="jumbotron mt-4 p-5 text-center" id="jumbotron">
-      <h1 class="display-1 fw-bold fst-italic">Kyle Munz</h1>
+    <div class="jumbotron mt-4 py-5 text-center" id="jumbotron">
+      <div class="row">
+        <div class="col-sm-2">&nbsp;</div>
+        <div class="col-sm-8">
+          <h1 class="display-1 fw-bold fst-italic">Kyle Munz</h1>
+        </div>
+        <div class="col-sm-2">
+          <div class="row h-50 align-bottom">
+            <a class="mt-auto" target="_blank" href="KyleMunz.pdf">
+              <img src="../images/resume-download.png" alt="Download my resume">
+            </a>
+          </div>
+          <div class="row h-50">
+            <a class="mt-auto" href="http://www.linkedin.com/in/kylemunz" target="_blank">
+              <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" alt="View Kyle Munz's profile on LinkedIn" width="80" height="15" border="0">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- End jumbotron -->
 
     <!-- Objective -->
     <div id="objective" class="container-fluid p-5 section">
-      <h2>Objective</h2>
+      <h2 class="pb-4">Objective</h2>
       <div class="row">
         <div class="col-sm-4">
           <i class="glyph bi bi-bullseye"></i>
@@ -62,7 +79,7 @@
 
     <!-- Skills -->
     <div id="skills" class="container-fluid bg-teal p-5 section">
-      <h2>Certifications and Skills</h2>
+      <h2 class="pb-4">Certifications and Skills</h2>
       <div class="row">
         <div class="col-sm-8 accordion" id="skillAccordion">
           <!-- Certifications -->
@@ -231,13 +248,13 @@
 
     <!-- Contributions -->
     <div id="contributions" class="container-fluid p-5 section">
-      <h2>Projects and Community Contributions</h2>
+      <h2 class="pb-4">Projects and Community Contributions</h2>
       <div class="row">
         <div class="col-sm-4">
           <i class="glyph bi bi-journal-code"></i>
         </div>
         <div class="col-sm-8">
-          <p class="lead">I am a proponent of the open source philophy and always try to contribute back to the community.</p>
+          <p class="lead">Below are some of my contributions back to the open source community:</p>
           <div class="accordion" id="contribAccordion">
             <!-- NPM -->
             <div class="accordion-item">
@@ -304,7 +321,7 @@
             <div class="accordion-item">
               <h3 class="accordion-header" id="contrib4">
                 <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#contribcollapse4" aria-expanded="true" aria-controls="collapse">
-                  Nagios Exchange
+                  Userscripts
                 </button>
               </h3>
               <div id="contribcollapse4" class="accordion-collapse collapse" aria-labelledby="contrib4" data-bs-parent="#contribAccordion">
@@ -324,7 +341,7 @@
 
     <!-- Employment -->
     <div id="employment" class="container-fluid p-5 bg-teal section">
-      <h2>Employment History</h2>
+      <h2 class="pb-4">Employment History</h2>
       <div class="row bg-white">
         <div class="col-sm-8">
           <h4>Hart Energy</h4>
