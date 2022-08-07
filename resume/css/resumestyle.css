@@ -9,6 +9,12 @@
   letter-spacing: 4px;
   border-radius: 0;
 }
+/* Reduce font size on smaller screens */
+@media (max-width: 1040px) {
+  .navbar {
+    font-size: 10px !important;
+  }
+}
 .navbar li a, .navbar .navbar-brand {
   color: #fefefe !important;
 }
@@ -18,13 +24,15 @@
 .navbar-brand img {
   height: 50px;
 }
-.navbar-nav li a:hover, .navbar-nav li.active a {
+.navbar-nav li a:hover, .navbar-nav a.active {
   color: #1380a1 !important;
   background-color: #fefefe !important;
 }
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-  color: #fefefe !important;
+/* nav-item left border on larger screens */
+@media (min-width: 993px) {
+  .nav-item {
+    border-left: 1px solid #fefefe;
+  }
 }
 .jumbotron {
   background-color: #1380a1;
@@ -39,7 +47,13 @@
   line-height: 200px;
 }
 /* Scale down glyphs on smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .glyph {
+    font-size: 25vh;
+    line-height: 25vh;
+  }
+}
+@media (max-width: 576px) {
   .glyph {
     font-size: 5vh;
     line-height: 5vh;
@@ -70,4 +84,14 @@
 #contributions a:hover {
   color: black;
   font-weight: bold;
+}
+#userscripts img:nth-child(odd) {
+  float: right;
+}
+#userscripts img:nth-child(even) {
+  float: left;
+}
+.msg {
+  /* background-color: #39ff5a; */
+  background-image: linear-gradient(#39ff5a, #bcf7c6);
 }
