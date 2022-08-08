@@ -41,6 +41,21 @@
 .jumbotron h1 {
   text-shadow: 2px 2px 3px #434343;
 }
+#objBody {
+  position: relative;
+}
+#objBody::before {
+  content: "";
+  background-image: url("../../images/sig-oil640.png");
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.30;
+}
 .glyph {
   color: #1380a1;
   font-size: 200px;
