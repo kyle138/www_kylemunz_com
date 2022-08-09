@@ -52,6 +52,7 @@
 #objBody::before {
   content: "";
   background-image: url("../../images/sig-oil640.png");
+  background-size: contain;
   position: absolute;
   top: 0px;
   right: 0px;
