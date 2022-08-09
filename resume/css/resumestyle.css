@@ -41,6 +41,11 @@
 .jumbotron h1 {
   text-shadow: 2px 2px 3px #434343;
 }
+@media (min-width: 1200px) {
+  .jumbotron h1 {
+    font-size: 8rem;
+  }
+}
 #objBody {
   position: relative;
 }
