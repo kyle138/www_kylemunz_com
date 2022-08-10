@@ -1,0 +1,133 @@
+.navbar {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  background-color: #c9ccd3;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+/* Reduce font size on smaller screens */
+@media (max-width: 1040px) {
+  .navbar {
+    font-size: 10px !important;
+  }
+}
+.navbar li a, .navbar .navbar-brand {
+  color: #fefefe !important;
+}
+.navbar-brand {
+  padding: 0px 15px;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.navbar-nav li a:hover, .navbar-nav a.active {
+  color: #1380a1 !important;
+  background-color: #fefefe !important;
+}
+/* nav-item left border on larger screens */
+@media (min-width: 993px) {
+  .nav-item {
+    border-left: 1px solid #fefefe;
+  }
+}
+.jumbotron {
+  background-color: #1380a1;
+  color: #c9ccd3;
+}
+.jumbotron h1 {
+  text-shadow: 2px 2px 3px #434343;
+}
+@media (min-width: 1200px) {
+  .jumbotron h1 {
+    font-size: 8rem;
+  }
+}
+#objBody {
+  position: relative;
+}
+#objBody::before {
+  content: "";
+  background-image: url("../../images/sig-oil640.png");
+  background-size: contain;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.30;
+}
+.glyph {
+  color: #1380a1;
+  font-size: 200px;
+  line-height: 200px;
+}
+/* Scale down glyphs on smaller screens */
+@media (max-width: 768px) {
+  .glyph {
+    font-size: 25vh;
+    line-height: 25vh;
+  }
+}
+@media (max-width: 576px) {
+  .glyph {
+    font-size: 5vh;
+    line-height: 5vh;
+  }
+}
+.glyph-lite {
+  color: #c7c7c7;
+}
+a.anchor {
+  display: block;
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+}
+.section h2 {
+  color: #333333;
+}
+.bg-grey {
+  background-color: #d6d6d6;
+  color: #333333;
+}
+.bg-teal {
+  background-color: #1380a1;
+  color: #333333;
+}
+.accordion-button:not(.collapsed) {
+  color: #1380a1;
+  background-color: #c7c7c7;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+#contributions a {
+  color: #434343;
+}
+#contributions a:hover {
+  color: black;
+  font-weight: bold;
+}
+#userscripts img:nth-child(odd) {
+  float: right;
+}
+#userscripts img:nth-child(even) {
+  float: left;
+}
+.msg {
+  background-image: linear-gradient(#39ff5a, #bcf7c6);
+}
+#undrcnst {
+  height: 138px;
+}
+.jobtitle {
+  /* background-image: linear-gradient(to right, #1380a1, #fcfcfc); */
+  background-image: linear-gradient(to right, rgba(19, 128, 161, 1), rgba(19, 128, 161, 0));
+}
+.jobdate {
+  background-image: linear-gradient(to left, rgba(19, 128, 161, 1), rgba(19, 128, 161, 0));
+}
