@@ -26,7 +26,7 @@
 }
 .navbar-nav li a:hover, .navbar-nav a.active {
   color: #1380a1 !important;
-  background-color: #fefefe !important;
+  background-color: #ff09d9 !important;
 }
 /* nav-item left border on larger screens */
 @media (min-width: 993px) {
@@ -35,11 +35,12 @@
   }
 }
 .jumbotron {
-  background-color: #1380a1;
-  color: #c9ccd3;
+  background-color: #eaff00;
+  /* color: #c9ccd3; */
+  color: #1380a1;
 }
 .jumbotron h1 {
-  text-shadow: 2px 2px 3px #434343;
+  text-shadow: 2px 2px 3px #ff09d9;
 }
 @media (min-width: 1200px) {
   .jumbotron h1 {
@@ -51,7 +52,8 @@
 }
 #objBody::before {
   content: "";
-  background-image: url("../../images/sig-oil640.png");
+  /* background-image: url("../../images/sig-oil640.png"); */
+  background-image: url("../../images/sig-80s_transbkgd.png");
   background-size: contain;
   position: absolute;
   top: 0px;
@@ -83,15 +85,43 @@
 .glyph-lite {
   color: #c7c7c7;
 }
+.teal-yellow {
+  color: #1380a1;
+  text-shadow: 2px 2px 3px #eaff00;
+}
+.teal-yellow {
+  color: #1380a1;
+  text-shadow: 2px 2px 3px #eaff00;
+}
+.teal-pink {
+  color: #1380a1;
+  text-shadow: 2px 2px 3px #ff09d9;
+}
+.yellow-teal {
+  color: #eaff00;
+  text-shadow: 2px 2px 3px #1380a1;
+}
+.yellow-pink {
+  color: #eaff00;
+  text-shadow: 2px 2px 3px #ff09d9;
+}
+.pink-yellow {
+  color: #ff09d9;
+  text-shadow: 2px 2px 3px #eaff00;
+}
+.pink-teal {
+  color: #ff09d9;
+  text-shadow: 2px 2px 3px #1380a1;
+}
 a.anchor {
   display: block;
   position: relative;
   top: -50px;
   visibility: hidden;
 }
-.section h2 {
+/* .section h2 {
   color: #333333;
-}
+} */
 .bg-grey {
   background-color: #d6d6d6;
   color: #333333;
@@ -99,6 +129,14 @@ a.anchor {
 .bg-teal {
   background-color: #1380a1;
   color: #333333;
+}
+.bg-yellow {
+  background-color: #eaff00;
+  color: #1380a1;
+}
+.bg-pink {
+  background-color: #ff09d9;
+  color: #1380a1;
 }
 .accordion-button:not(.collapsed) {
   color: #1380a1;
@@ -125,9 +163,8 @@ a.anchor {
   height: 138px;
 }
 .jobtitle {
-  /* background-image: linear-gradient(to right, #1380a1, #fcfcfc); */
-  background-image: linear-gradient(to right, rgba(19, 128, 161, 1), rgba(19, 128, 161, 0));
+  background-image: linear-gradient(to right, rgba(255, 9, 217, 1), rgba(255, 9, 217, 0));
 }
 .jobdate {
-  background-image: linear-gradient(to left, rgba(19, 128, 161, 1), rgba(19, 128, 161, 0));
+  background-image: linear-gradient(to left, rgba(234, 255, 0, 1), rgba(234, 255, 0, 0));
 }
