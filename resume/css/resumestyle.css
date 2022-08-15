@@ -1,3 +1,10 @@
+:root {
+  --teal: #1380a1;
+  --pink: #ff09d9;
+  --navactivebg: #fefefe;
+  --sig: url("../../images/sig-oil640.png");
+}
+
 .navbar {
   font-family: Montserrat, sans-serif;
   margin-bottom: 0;
@@ -26,21 +33,14 @@
 }
 .navbar-nav li a:hover, .navbar-nav a.active {
   color: #1380a1 !important;
-  background-color: #ff09d9 !important;
+  /* background-color: #ff09d9 !important; */
+  background-color: var(--navactivebg);
 }
 /* nav-item left border on larger screens */
 @media (min-width: 993px) {
   .nav-item {
     border-left: 1px solid #fefefe;
   }
-}
-.jumbotron {
-  background-color: #eaff00;
-  /* color: #c9ccd3; */
-  color: #1380a1;
-}
-.jumbotron h1 {
-  text-shadow: 2px 2px 3px #ff09d9;
 }
 @media (min-width: 1200px) {
   .jumbotron h1 {
@@ -52,8 +52,7 @@
 }
 #objBody::before {
   content: "";
-  /* background-image: url("../../images/sig-oil640.png"); */
-  background-image: url("../../images/sig-80s_transbkgd.png");
+  background-image: var(--sig, url("../../images/sig-oil640.png"));
   background-size: contain;
   position: absolute;
   top: 0px;
@@ -82,34 +81,41 @@
     line-height: 5vh;
   }
 }
-.glyph-lite {
+.fg-teal {
+  color: #1380a1;
+}
+.fg-grey {
   color: #c7c7c7;
 }
-.teal-yellow {
+.greysh {
+  color: #c9ccd3;
+  text-shadow: 2px 2px 3px #434343;
+}
+.rda.teal-yellow {
   color: #1380a1;
   text-shadow: 2px 2px 3px #eaff00;
 }
-.teal-yellow {
+.rda.teal-yellow {
   color: #1380a1;
   text-shadow: 2px 2px 3px #eaff00;
 }
-.teal-pink {
+.rda.teal-pink {
   color: #1380a1;
   text-shadow: 2px 2px 3px #ff09d9;
 }
-.yellow-teal {
+.rda.yellow-teal {
   color: #eaff00;
   text-shadow: 2px 2px 3px #1380a1;
 }
-.yellow-pink {
+.rda.yellow-pink {
   color: #eaff00;
   text-shadow: 2px 2px 3px #ff09d9;
 }
-.pink-yellow {
+.rda.pink-yellow {
   color: #ff09d9;
   text-shadow: 2px 2px 3px #eaff00;
 }
-.pink-teal {
+.rda.pink-teal {
   color: #ff09d9;
   text-shadow: 2px 2px 3px #1380a1;
 }
@@ -119,22 +125,22 @@ a.anchor {
   top: -50px;
   visibility: hidden;
 }
-/* .section h2 {
+.section h2 {
   color: #333333;
-} */
+}
 .bg-grey {
   background-color: #d6d6d6;
   color: #333333;
 }
-.bg-teal {
+.bg-teal, .rda.rd-bg-teal {
   background-color: #1380a1;
   color: #333333;
 }
-.bg-yellow {
+.rda.rd-bg-yellow {
   background-color: #eaff00;
   color: #1380a1;
 }
-.bg-pink {
+.rda.rd-bg-pink {
   background-color: #ff09d9;
   color: #1380a1;
 }
@@ -143,10 +149,10 @@ a.anchor {
   background-color: #c7c7c7;
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
 }
-#contributions a {
+#contribAccordion a {
   color: #434343;
 }
-#contributions a:hover {
+#contribAccordion a:hover {
   color: black;
   font-weight: bold;
 }
