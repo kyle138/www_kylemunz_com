@@ -1,10 +1,7 @@
 :root {
-  --teal: #1380a1;
-  --pink: #ff09d9;
   --navactivebg: #fefefe;
   --sig: url("../../images/sig-oil640.png");
 }
-
 .navbar {
   font-family: Montserrat, sans-serif;
   margin-bottom: 0;
@@ -33,7 +30,6 @@
 }
 .navbar-nav li a:hover, .navbar-nav a.active {
   color: #1380a1 !important;
-  /* background-color: #ff09d9 !important; */
   background-color: var(--navactivebg);
 }
 /* nav-item left border on larger screens */
@@ -169,8 +165,5 @@ a.anchor {
   height: 138px;
 }
 .jobtitle {
-  background-image: linear-gradient(to right, rgba(255, 9, 217, 1), rgba(255, 9, 217, 0));
-}
-.jobdate {
-  background-image: linear-gradient(to left, rgba(234, 255, 0, 1), rgba(234, 255, 0, 0));
+  background-image: linear-gradient(to right, rgba(19, 128, 161, 1), rgba(192, 128, 161, 0));
 }
