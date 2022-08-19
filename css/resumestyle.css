@@ -38,11 +38,6 @@
     border-left: 1px solid #fefefe;
   }
 }
-@media (min-width: 1200px) {
-  .jumbotron h1 {
-    font-size: 8rem;
-  }
-}
 #objBody {
   position: relative;
 }
