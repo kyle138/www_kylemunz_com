@@ -54,14 +54,27 @@
     <a class="anchor" id="download"></a>
     <div class="container-fluid p-5 section">
       <h2 class="pb-4">Download Form</h2>
-      <div class="row">
-        <div class="col-sm-4">
-          <i class="glyph fg-teal bi bi-cloud-download"></i>
+      <noscript>
+        <p class="alert alert-danger">Javascript is required to interact with this form. Yours seems to be disabled.</p>
+      </noscript>
+      <form class="form-horizontal" id="getQSAform" novalidate>
+        <div class="form-group row form-row" id="row-passcode">
+          <div class="col-sm-4">
+            <i class="glyph fg-teal bi bi-cloud-download"></i>
+          </div>
+          <div class="col-sm-8">
+            <label class="col-form-label" for="passcodetxt">Enter the passcode:</label><br>
+            <div class="input-group">
+              <input type="password" name="passcodetxt" id="passcodetxt" value="">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary" id="passcodechk" name="passcodechk">Submit</button>
+              </div>
+            </div>
+            <div class="container-fluid" id="passcodeAlertMsg"></div>
+          </div>
         </div>
-        <div class="col-sm-8">
-          Download form coming soon
-        </div>
-      </div>
+      </form>
+
     </div>
     <!-- End Download -->
 
@@ -70,8 +83,9 @@
     <div class="container-fluid bg-teal p-5 section">
       <h2>How It's Done</h2>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 text-center">
           <p>Details about password protected S3 items will go here.</p>
+          <img class="img-fluid" src="/images/90s-under-construction.gif" alt="Under Construction">
         </div>
         <div class="col-sm-4 text-end">
           <i class="glyph fg-grey bi bi-list-columns-reverse"></i>
