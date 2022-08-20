@@ -28,6 +28,42 @@ p.site-description {
 #sites h1:hover {
   text-shadow: 2px 2px 3px #131313;
 }
+.glyph {
+  color: #1380a1;
+  font-size: 200px;
+  line-height: 200px;
+}
+/* Scale down glyphs on smaller screens */
+@media (max-width: 768px) {
+  .glyph {
+    font-size: 25vh;
+    line-height: 25vh;
+  }
+}
+@media (max-width: 576px) {
+  .glyph {
+    font-size: 5vh;
+    line-height: 5vh;
+  }
+}
+.bg-grey {
+  background-color: #d6d6d6;
+  color: #333333;
+}
+.bg-teal {
+  background-color: #1380a1;
+  color: #333333;
+}
+.fg-teal {
+  color: #1380a1;
+}
+.fg-grey {
+  color: #c7c7c7;
+}
+.greysh {
+  color: #c9ccd3;
+  text-shadow: 2px 2px 3px #434343;
+}
 footer {
   color: #1380a1;
 }

@@ -1,0 +1,52 @@
+.navbar {
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  background-color: #c9ccd3;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px;
+  line-height: 1.42857143;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+/* Reduce font size on smaller screens */
+@media (max-width: 1230px) {
+  .navbar {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 1145px) {
+  .navbar {
+    font-size: 9px !important;
+  }
+}
+@media (max-width: 1080px) {
+  .navbar {
+    font-size: 7px !important;
+  }
+}
+.navbar li a, .navbar .navbar-brand {
+  color: #fefefe !important;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.navbar-nav li a:hover, .navbar-nav a.active {
+  color: #1380a1 !important;
+  background-color: var(--navactivebg);
+}
+/* nav-item left border on larger screens */
+@media (min-width: 993px) {
+  .nav-item {
+    border-left: 1px solid #fefefe;
+  }
+}
+a.anchor {
+  display: block;
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+}
+.section h2 {
+  color: #333333;
+}
