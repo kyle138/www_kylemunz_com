@@ -1,6 +1,7 @@
 'use strict';
 var rdclicks = 0;
 
+// Trigger the razzle dazzle
 document.getElementById('joystick').onclick = () => {
   rdclicks++;
   if(rdclicks%3 == 0) {
@@ -26,3 +27,12 @@ document.getElementById('joystick').onclick = () => {
     }
   }
 }
+
+// Load the tooltips
+document.addEventListener("DOMContentLoaded", () => {
+  const tts = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  .map((tt) => {
+    console.log(tt);
+    return new bootstrap.Tooltip(tt);
+  });
+})
