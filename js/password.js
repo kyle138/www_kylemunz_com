@@ -1,0 +1,136 @@
+// Retrieve QSA links for all downloads
+document.addEventListener("DOMContentLoaded", () => {
+  // Set defaults
+  const url = "https://nf99b8wk5k.execute-api.us-west-2.amazonaws.com/V1/getqsafromcode/";
+
+  // Get the pwd elements
+  const pchkbtn = document.getElementById("passwordchk");
+  const pwdtxt = document.getElementById("passwordtxt");
+  const pwdmsg = document.getElementById("passwordmsg");
+
+  // Intercept password button clicks
+  pchkbtn.addEventListener("click", () => {
+    getQSA(pwdtxt?.value);
+  });
+
+  // Intercept 'ENTER' key in passwordtxt field
+  pwdtxt.addEventListener("keyup", (e) => {
+    if(e.keyCode === 13) getQSA(pwdtxt?.value);
+  });
+
+  // Use password to get signed QSA links
+  function getQSA(pwd) {
+    if (pwd) {
+      vdtPswd();
+      // Get QSA for all .downloadlink elements
+      const dlls = [].slice.call(document.querySelectorAll('.downloadlink'))
+      .map(async (dll) => {
+        await fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+            "passcode": pwd,
+            "hrefurl": dll.href
+          })
+        })  // End fetch
+        .then(async (res) => {
+          if(res.ok) {
+            return await res.json();
+          } else {
+            let reserr = await res.json();
+            console.error('res is not ok:',reserr); // DEBUG:
+            throw reserr.response;
+          } //Fetch went ok
+        })  // End fetch.then
+        .then((data) => {
+          if (data.errorMessage) {
+            console.error('data.errorMessage'); // DEBUG:
+            throw data.errorMessage;
+          } else {
+            corPswd();
+            enDll(
+              {
+                'dll': dll.id,
+                'qsa':  data
+              }
+            );
+            return;
+          }
+        })  // End fetch.then.then
+        .catch((err) => {
+          console.error('fetch catch: ',err); // DEBUG:
+          if (err == 'Incorrect Passcode') {
+            incPswd();
+          } else {
+            errMsg();
+          }
+        }); // End Fetch.catch
+      }); // End map
+    } // End if pwd
+  } // End getQSA
+
+  // Validating password
+  function vdtPswd() {
+    pwdtxt.value = "";
+    pwdmsg.innerHTML = "Validating password...";
+    pwdmsg.classList.remove("alert-danger", "alert-success");
+    pwdmsg.classList.add("alert-info");
+  }
+
+  // Password provided doesn't check out
+  function incPswd() {
+    pwdmsg.innerHTML = "The password you entered is incorrect...";
+    pwdmsg.classList.remove("alert-info", "alert-success");
+    pwdmsg.classList.add("alert-danger");
+  } // End incPswd
+
+  // Password provided is correct
+  function corPswd() {
+    pwdmsg.innerHTML = "Password checks out, please use the download button below.";
+    pwdmsg.classList.remove("alert-danger", "alert-info");
+    pwdmsg.classList.add("alert-success");
+  } // End corPswd
+
+  // General error message
+  function errMsg() {
+    pwdmsg.innerHTML = "Sorry, I am experiencing technical difficulties, please try again later.";
+    pwdmsg.classList.remove("alert-info", "alert-success");
+    pwdmsg.classList.add("alert-danger");
+  } // End incPswd
+
+  // Enable download link with QSA
+  function enDll(obj) {
+    if(obj?.dll.length < 1 || obj?.qsa.length < 1) {
+      errMsg();
+    } else {
+      console.log('dll', obj.dll);  // DEBUG:
+      console.log('qsa', obj.qsa);  // DEBUG:
+      let dl = document.getElementById(obj.dll)
+      dl.href = obj.qsa;
+      dl.classList.remove("disabled");
+      dl.classList.replace("btn-outline-secondary","btn-success");
+      dl.setAttribute('aria-disabled', "false");
+      dllTmr(obj.dll);
+    }
+  } // End enDownload
+
+  // Disable the download link
+  function disDll(dll) {
+    if(dll) {
+      let dl = document.getElementById(dll);
+      dl.href = dl.href.split("?")[0];
+      dl.classList.add("disabled");
+      dl.classList.replace("btn-success","btn-outline-secondary");
+      dl.setAttribute('aria-disabled', "true");
+      pwdmsg.innerHtml = "";
+      pwdmsg.classList.remove("alert-info", "alert-success", "alert-danger");
+    }
+  } // End disDll
+
+  // Timer to disable the download link
+  function dllTmr(dll) {
+    setTimeout(() => {
+      console.log('Download link will disable in 10 minutes.');  // DEBUG:
+      disDll(dll)
+    }, 6000);
+  } // End dllTmr
+});
