@@ -1,5 +1,6 @@
 // Retrieve QSA links for all downloads
 document.addEventListener("DOMContentLoaded", () => {
+
   // Set defaults
   const url = "https://nf99b8wk5k.execute-api.us-west-2.amazonaws.com/V1/getqsafromcode/";
 
@@ -25,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Get QSA for all .downloadlink elements
       const dlls = [].slice.call(document.querySelectorAll('.downloadlink'))
       .map(async (dll) => {
+        // Convert password to lowercase and strip any whitespace.
+        // It's not very secure, but this doesn't need to be very secure.
+        // I would NOT recommend doing this for account logins.
+        pwd = pwd.toLowerCase().trim().replace(/ /g,'');
         await fetch(url, {
           method: 'POST',
           body: JSON.stringify({
@@ -97,6 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pwdmsg.classList.add("alert-danger");
   } // End incPswd
 
+  // Clear all messages
+  function clearMsg() {
+    pwdmsg.innerHTML = '';
+    pwdmsg.classList.remove("alert-info", "alert-success", "alert-danger", "alert-warning");
+  } // End clearMsg
+
   // Enable download link with QSA
   function enDll(obj) {
     if(obj?.dll.length < 1 || obj?.qsa.length < 1) {
@@ -104,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.log('dll', obj.dll);  // DEBUG:
       console.log('qsa', obj.qsa);  // DEBUG:
+      bootstrap.Tooltip.getInstance('#downloadanchorwrapper').disable();
       let dl = document.getElementById(obj.dll)
       dl.href = obj.qsa;
       dl.classList.remove("disabled");
@@ -121,8 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
       dl.classList.add("disabled");
       dl.classList.replace("btn-success","btn-outline-secondary");
       dl.setAttribute('aria-disabled', "true");
-      pwdmsg.innerHtml = "";
-      pwdmsg.classList.remove("alert-info", "alert-success", "alert-danger");
+      pwdmsg.innerHTML = "Download has expired.";
+      pwdmsg.classList.remove("alert-info", "alert-success", "alert-danger", "alert-warning");
+      pwdmsg.classList.add("alert-warning");
+      bootstrap.Tooltip.getInstance('#downloadanchorwrapper').enable();
+      tmoTmr();
     }
   } // End disDll
 
@@ -131,6 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       console.log('Download link will disable in 10 minutes.');  // DEBUG:
       disDll(dll)
-    }, 6000);
+    }, 10*60*1000);
   } // End dllTmr
+
+  // Timeout timer, clears all messages.
+  function tmoTmr() {
+    setTimeout(clearMsg, 1*60*1000);
+  } // End tmoTmr
+
 });

@@ -83,7 +83,7 @@
             </div>
             <div class="row">
               <div class="container-fluid">
-                <span class="d-inline-block" tabindex="0" id="downloadanchorwrapper" id="downloadanchor" data-bs-toggle="tooltip" data-bs-placement="top" title="You must enter a valid password to enable download.">
+                <span class="d-inline-block" tabindex="0" id="downloadanchorwrapper" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="You must enter a valid password to enable download.">
                   <a href="https://s3.us-west-2.amazonaws.com/secures3example.kylemunz.com/resume/KyleMunz.pdf" class="btn btn-outline-secondary btn-lg downloadlink disabled" role="button" name="resumedl" id="resumedl" aria-disabled="true">DOWNLOAD</a>
                 </span>
               </div>
@@ -99,9 +99,13 @@
     <div class="container-fluid bg-teal p-5 section">
       <h2>How It's Done</h2>
       <div class="row">
-        <div class="col-sm-8 text-center">
-          <p>Details about password protected S3 items will go here.</p>
-          <img class="img-fluid" src="/images/90s-under-construction.gif" alt="Under Construction">
+        <div class="col-sm-8 fg-grey">
+          <p>
+            Password protected files are nothing new on the web with the typical solutions (Apache .htaccess, PHP forms, etc) requiring a server.
+            But how do you secure online files if you don't have a server? Amazon S3 offers optional "Query String Authentication" for files hosted in S3. The files are not accessible by default, but once they are signed and have the QSA string appended to the URL they become accessible for a specified amount of time.
+          </p>
+          <p>To generate a QSA string you need to have a role with permissions to that S3 bucket. You could always generate this QSA client-side by embedding an IAM access key and secret in your code but AWS frowns on this practice. The other option is using a Lambda function behind an API Gateway and have your clientside code retrieve it using AJAX calls.</p>
+          <p>A simple example can be found <a href="https://github.com/kyle138/getQSAFromCode" class="link-dark" target="_blank">here</a>.</p>
         </div>
         <div class="col-sm-4 text-end">
           <i class="glyph fg-grey bi bi-list-columns-reverse"></i>
