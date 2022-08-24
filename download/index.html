@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/stylesheet.css" type="text/css">
     <link rel="stylesheet" href="/css/navbar.css" type="text/css">
   </head>
-  <body>
+  <body id="download" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="60">
     <!-- Alas poor Jumbotron, I knew him, et tu BS5? -->
     <div class="container-fluid jumbotron py-5 text-center" id="jumbotron">
       <div class="row">
@@ -63,13 +63,13 @@
           <div class="col-sm-4">
             <i class="glyph fg-teal bi bi-cloud-download"></i>
           </div>
-          <div class="col-sm-8 pe-5">
+          <div class="col-sm-8 pe-lg-5">
             <div class="row">
               <p>My resume is available for download as a PDF file, however it is password protected.</p>
             </div>
-            <div class="row">
+            <div class="row col col-lg-6">
               <label class="form-label" for="passwordtxt">Please enter the password below:</label>
-              <div class="input-group w-50 mb-3">
+              <div class="input-group mb-3">
                 <input class="form-control" type="password" name="passwordtxt" id="passwordtxt" value="">
                 <div class="input-group-append">
                   <button type="button" class="btn btn-primary" id="passwordchk" name="passwordchk">Submit</button>
