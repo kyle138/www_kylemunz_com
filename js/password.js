@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dl.classList.remove("disabled");
       dl.classList.replace("btn-outline-secondary","btn-success");
       dl.setAttribute('aria-disabled', "false");
-      dllTmr(obj.dll);
+      dllTmrSet(obj.dll);
     }
   } // End enDownload
 
@@ -141,12 +141,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   } // End disDll
 
+  // Set timer to disable the download link
+  function dllTmrSet(dll) {
+    console.log('Download link will disable in 10 minutes.');  // DEBUG:
+    let expiry = Math.floor(new Date(Date.now()+600000));
+    localStorage.setItem(`dll_expire_${dll}`, expiry);
+    dllTmr(dll);
+  } // End dllTmrSet
+
   // Timer to disable the download link
   function dllTmr(dll) {
     setTimeout(() => {
-      console.log('Download link will disable in 10 minutes.');  // DEBUG:
-      disDll(dll)
-    }, 10*60*1000);
+      if(new Date(Date.now()) > localStorage.getItem(`dll_expire_${dll}`)) {
+        console.log('Timeout'); // DEBUG:
+        localStorage.removeItem(`dll_expire_${dll}`);
+        disDll(dll)
+      } else {
+        // Not expired yet, check again in a sec
+        dllTmr(dll);
+      }
+    }, 1000);
   } // End dllTmr
 
   // Timeout timer, clears all messages.
