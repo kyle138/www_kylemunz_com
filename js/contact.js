@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contactBtn.addEventListener("click", async () => {
 
     // Wait for form to expand
-    await delay(1138);
+    await delay(777);
 
     // Scroll to contact form
     window.scrollTo({
