@@ -62,10 +62,10 @@
   background-color: #c7c7c7;
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
 }
-#contribAccordion a {
+#contribAccordion a, #profAccordion a, #funAccordion a {
   color: #434343;
 }
-#contribAccordion a:hover {
+#contribAccordion a:hover, #profAccordion a:hover, #funAccordion a:hover {
   color: black;
   font-weight: bold;
 }
