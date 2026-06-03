@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
       // Convert formdata to JSON string for APIG
       formdata = JSON.stringify(formdata);
       $.ajax({
-        url: "https://x840ml1te8.execute-api.us-west-2.amazonaws.com/prod/feedback/",
+        url: "https://i6rwm5d69k.execute-api.us-east-1.amazonaws.com/Prod/feedback/",
         dataType: 'json',
         type: "POST",
         data: formdata,
