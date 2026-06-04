@@ -17,7 +17,8 @@ jQuery(document).ready(function($) {
       var formdata = {
         name: $("input#name").val(),
         email: $("input#email").val(),
-        subject: $("input#site").val()+"-"+$("input#subject").val(),
+        subject: $("input#subject").val(),
+	site: $("input#site").val(),
         message: $("textarea#message").val()
       };
       // If submitted name has a space, carve off the first name for response.
@@ -27,7 +28,7 @@ jQuery(document).ready(function($) {
       // Convert formdata to JSON string for APIG
       formdata = JSON.stringify(formdata);
       $.ajax({
-        url: "https://x840ml1te8.execute-api.us-west-2.amazonaws.com/prod/feedback/",
+        url: "https://i6rwm5d69k.execute-api.us-east-1.amazonaws.com/Prod/feedback/",
         dataType: 'json',
         type: "POST",
         data: formdata,
