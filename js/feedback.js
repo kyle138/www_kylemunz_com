@@ -17,7 +17,8 @@ jQuery(document).ready(function($) {
       var formdata = {
         name: $("input#name").val(),
         email: $("input#email").val(),
-        subject: $("input#site").val()+"-"+$("input#subject").val(),
+        subject: $("input#subject").val(),
+	site: $("input#site").val(),
         message: $("textarea#message").val()
       };
       // If submitted name has a space, carve off the first name for response.
