@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
         name: $("input#name").val(),
         email: $("input#email").val(),
         subject: $("input#subject").val(),
-	      site: $("input#site").val(),
+        site: $("input#site").val(),
         score: $("input#score").val(),
         message: $("textarea#message").val()
       };
